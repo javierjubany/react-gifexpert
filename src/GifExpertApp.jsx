@@ -11,30 +11,30 @@ export const GifExpertApp = () => {
         if (categories.includes(newCategory)) return;
 
         setCategories([newCategory, ...categories]);
-       //setCategories( cat => [...cat, 'Nueva Category' + cat.length]);
+        //setCategories( cat => [...cat, 'Nueva Category' + cat.length]);
     }
 
-  return (
-    <>
-        <h1>GifExpertApp</h1>
+    return (
+        <>
+            <h1>GifExpertApp</h1>
 
-        <AddCategory 
-            onNewCategory={value => onAddCategory(value)}
-        />
-        
-        
-        { 
-            categories.map((category) => (
-                <GifGrid 
-                    key={category} 
-                    category={category}
-                />
-            ))
-        }
-            
+            <AddCategory
+                onNewCategory={value => onAddCategory(value)}
+            />
 
 
-    </>
-  )
+            {
+                categories.map((category) => (
+                    <GifGrid
+                        key={category}
+                        category={category}
+                    />
+                ))
+            }
+
+
+
+        </>
+    )
 }
 
